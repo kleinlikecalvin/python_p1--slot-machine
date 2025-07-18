@@ -14,17 +14,22 @@ A simple Vegas-style electronic slot machine built with Python. This project is 
 1. The player starts with a balance of $100.
 2. The player places a bet for each spin.
 3. The slot machine spins three reels with random symbols.
-4. Winnings are calculated based on the symbols:
-   - **Jackpot**: All three symbols match (10x payout).
-   - **Small Win**: Two symbols match (2x payout).
-   - **No Win**: No matching symbols.
+4. Winnings are calculated based on the symbols.
 5. The game ends when the player runs out of balance or chooses to quit.
 
-## Setup Instructions
+## Setup & Play Instructions
 
 1. Install Python (version 3.6 or later).
+   ```
+   brew install python3
+   ```
 2. Clone this repository or copy the code into a file named `slot_machine.py`.
-3. Run the script in your terminal:
+3. If using VS Code - set up a virtual environment (https://code.visualstudio.com/docs/python/python-tutorial)
+4. Activate the virtual environment - if necessary
+   ```
+   source .venv/bin/activate
+   ```
+5. Run the script in your terminal:
    ```bash
-   python slot_machine.py
+   python3 slot_machine.py
    ```
