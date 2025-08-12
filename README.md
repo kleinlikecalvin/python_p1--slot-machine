@@ -13,8 +13,8 @@ A simple Vegas-style electronic slot machine built with Python. This project is 
 
 1. The player starts with a balance of $100.
 2. The player places a bet for each spin.
-3. The slot machine spins three reels with random symbols.
-4. Winnings are calculated based on the symbols.
+3. The slot machine "spins" three reels with set symbols.
+4. Winnings are calculated based on the pattern of symbols matched.
 5. The game ends when the player runs out of balance or chooses to quit.
 
 ## Libraries leveraged
