@@ -38,3 +38,7 @@ A simple Vegas-style electronic slot machine built with Python. This project is 
    ```bash
    python3 slot_machine.py
    ```
+
+## Screenshot
+
+![Screen shot of winning gameplay](images/winner.png)
