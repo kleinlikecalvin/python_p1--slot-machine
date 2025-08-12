@@ -1,6 +1,6 @@
 # Vegas-Style Slot Machine
 
-A simple Vegas-style electronic slot machine built with Python. This project is perfect for beginners learning Python and simulates a slot machine with spinning reels, betting, and payouts.
+A simple Vegas-style electronic slot machine built with Python. This project is perfect for beginners learning Python and simulates a slot machine with 3 reels, betting, and payouts.
 
 ## Features
 
