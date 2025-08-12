@@ -17,6 +17,10 @@ A simple Vegas-style electronic slot machine built with Python. This project is 
 4. Winnings are calculated based on the symbols.
 5. The game ends when the player runs out of balance or chooses to quit.
 
+## Libraries leveraged
+
+1. [art][https://pypi.org/project/art/]
+
 ## Setup & Play Instructions
 
 1. Install Python (version 3.6 or later).
