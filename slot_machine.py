@@ -131,9 +131,4 @@ def play(bet_amount: int):
 
 # Example
 play(2)  # Invalid amount
-play(5)
-play(10)
-play(20)
-play(25)  # Invalid amount
-play(50)
-play(100)
+play(50)  # Valid amount
