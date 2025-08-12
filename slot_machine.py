@@ -55,6 +55,13 @@ def bet(bet_amount):
                     ongoing_balance
                 )
             )
+            re_up = input(
+                "Would you like to add more to your balance? Type Y or N >>> "
+            )
+            if re_up:
+                amount = input("Add to your balance (ex: 500) >>> ")
+                if int(amount):
+                    add_to_balance(int(amount))
             return False
     else:
         print(
@@ -83,13 +90,12 @@ def get_payout(spin_result):
         return payout
     else:
         # Check for potential matches
-        for i, symbol in enumerate(spin_result):
-            if symbol == spin_result[0] and symbol == spin_result[1]:
-                # find that in the paytable by replacing the third with '*'
-                first_two_match = [symbol, symbol, "*"]
-                payout = paytable.get(tuple(first_two_match), 0)
+        if spin_result[0] == spin_result[1]:
+            # find that in the paytable by replacing the third with '*'
+            first_two_match = [spin_result[0], spin_result[1], "*"]
+            payout = paytable.get(tuple(first_two_match), 0)
 
-            return payout
+        return payout
 
 
 # Check for a win function
@@ -102,11 +108,13 @@ def check_for_winner(spin_result):
 
 # Play function
 def play(bet_amount: int):
-    print(break_string)
-    tprint("Checking balance", font="tarty2")
-    print(break_string)
     bet_is_applied = bet(bet_amount)
-    if bet_is_applied:
+    if not bet_is_applied:
+        play_again()
+    else:
+        print(break_string)
+        tprint("Checking balance", font="tarty2")
+        print(break_string)
         print(
             "Bet placed! We've subtracted {} from your balance. Your new balance is {}!".format(
                 bet_amount, ongoing_balance
@@ -120,15 +128,21 @@ def play(bet_amount: int):
             tprint("Wahoo", font="isometric2")
             print("🥳 You've won!! We're adding {} to your balance.".format(amount_won))
             add_to_balance(amount_won)
+            play_again()
         else:
             tprint("Womp womp", font="isometric3")
-            print("Goose eggs... try again!")
+            print("Goose eggs...!")
+            play_again()
+
+
+def play_again():
+    new_bet = input("Place another bet of 5, 10, 20, 50, or 100 >>> ")
+    if new_bet:
+        play(int(new_bet))
 
 
 # 🎰 Call play() or add_to_balance()
-# You can only bet in increments of 5, 10, 20, 50, and 100
 # Then run the file in terminal (ex: python slot_machine.py)
 
-# Example
-play(2)  # Invalid amount
-play(50)  # Valid amount
+bet_amount = input("Enter a bet amount of 5, 10, 20, 50, or 100 >>> ")
+play(int(bet_amount))
