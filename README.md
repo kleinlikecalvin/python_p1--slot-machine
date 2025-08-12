@@ -33,7 +33,8 @@ A simple Vegas-style electronic slot machine built with Python. This project is 
    ```
    source .venv/bin/activate
    ```
-5. Run the script in your terminal:
+5. Call the play function with a bet amount
+6. Run the script in your terminal:
    ```bash
    python3 slot_machine.py
    ```
