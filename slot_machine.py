@@ -55,18 +55,36 @@ def bet(bet_amount):
                     ongoing_balance
                 )
             )
-            re_up = input(
+            is_re_upping = input(
                 "Would you like to add more to your balance? Type Y or N >>> "
             )
-            if re_up:
-                amount = input("Add to your balance (ex: 500) >>> ")
-                if int(amount):
-                    add_to_balance(int(amount))
-            return False
+            if is_re_upping == "Y":
+                re_up()
+            else:
+                return False
     else:
         print(
             "Could not place bet, please choose a valid bet amount: 5, 10, 20, 50, or 100."
         )
+        return False
+
+
+# Re-Up
+def re_up():
+    amount = input("Add to your balance (ex: 500) >>> ")
+    if is_number(amount):
+        add_to_balance(int(amount))
+    else:
+        print("Incorrect amount.")
+        amount = input("Add to your balance (ex: 500) >>> ")
+
+
+# Check if amount is a number
+def is_number(amount):
+    try:
+        float(amount)  # Attempt to convert to a float
+        return True
+    except ValueError:
         return False
 
 
@@ -110,7 +128,9 @@ def check_for_winner(spin_result):
 def play(bet_amount: int):
     bet_is_applied = bet(bet_amount)
     if not bet_is_applied:
-        play_again()
+        new_bet = input("Place another bet of 5, 10, 20, 50, or 100 >>> ")
+        bet = check_bet(new_bet)
+        play(bet)
     else:
         print(break_string)
         tprint("Checking balance", font="tarty2")
@@ -128,21 +148,24 @@ def play(bet_amount: int):
             tprint("Wahoo", font="isometric2")
             print("🥳 You've won!! We're adding {} to your balance.".format(amount_won))
             add_to_balance(amount_won)
-            play_again()
+            play()
         else:
             tprint("Womp womp", font="isometric3")
             print("Goose eggs...!")
-            play_again()
+            play()
 
 
-def play_again():
-    new_bet = input("Place another bet of 5, 10, 20, 50, or 100 >>> ")
-    if new_bet:
-        play(int(new_bet))
+# Handle invalid bet amount
+def check_bet(bet_amount):
+    if is_number(bet_amount) and bet_amount in bet_table:
+        play(int(bet_amount))
+    else:
+        new_bet = input(
+            "Could not place bet, please choose a valid bet amount: 5, 10, 20, 50, or 100 >>> "
+        )
+        play(new_bet)
 
 
-# 🎰 Call play() or add_to_balance()
-# Then run the file in terminal (ex: python slot_machine.py)
-
+# Run the file in terminal (ex: python slot_machine.py)
 bet_amount = input("Enter a bet amount of 5, 10, 20, 50, or 100 >>> ")
-play(int(bet_amount))
+check_bet(bet_amount)
