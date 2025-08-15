@@ -1,21 +1,23 @@
 # Vegas-Style Slot Machine
 
-A simple Vegas-style electronic slot machine built with Python. This project is perfect for beginners learning Python and simulates a slot machine with 3 reels, betting, and payouts.
+A simple Vegas-style electronic slot machine built with Python. This project is perfect for beginners learning Python and simulates a slot machine game play with betting and payouts.
 
 ## Features
 
-- Simulates spinning reels with random symbols.
-- Allows the player to place bets and tracks their balance.
-- Calculates winnings based on matching symbols.
-- Simple text-based interface.
+- Simulates game play
+- Allows the user to place bets
+- Handles invalid user input
+- Tracks user balance
+- Calculates winnings based on matching symbols
+- Simple text-based interface
 
 ## How It Works
 
 1. The player starts with a balance of $100.
 2. The player places a bet for each spin.
-3. The slot machine "spins" three reels with set symbols.
+3. The slot machine "spins" to match a tuple of defined symbols with specific payouts.
 4. Winnings are calculated based on the pattern of symbols matched.
-5. The game ends when the player runs out of balance or chooses to quit.
+5. The game ends when the player runs out of balance and chooses to quit.
 
 ## Libraries leveraged
 
