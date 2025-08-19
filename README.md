@@ -19,17 +19,17 @@ A simple Vegas-style electronic slot machine built with Python. This project is 
 4. Winnings are calculated based on the pattern of symbols matched.
 5. The game ends when the player runs out of balance and chooses to quit.
 
-## Libraries leveraged
+## Libraries Leveraged
 
 1. [art][https://pypi.org/project/art/]
 
 ## Setup & Play Instructions
 
-1. Install Python (version 3.6 or later).
+1. Clone this repository or copy the code into a file named `slot_machine.py`.
+2. Install Python (version 3.6 or later).
    ```
    brew install python3
    ```
-2. Clone this repository or copy the code into a file named `slot_machine.py`.
 3. If using VS Code - set up a virtual environment (https://code.visualstudio.com/docs/python/python-tutorial)
 4. Activate the virtual environment - if necessary
    ```

@@ -150,7 +150,7 @@ def re_up():
         re_up()
 
 
-# Add to balance function
+# Add to balance
 def add_to_balance(amount_to_add: int):
     global ongoing_balance
     ongoing_balance += amount_to_add
@@ -179,7 +179,7 @@ def get_payout(spin_result):
         return payout
 
 
-# Check for a win function
+# Check for a win
 def check_for_winner(spin_result):
     amount_won = get_payout(spin_result)
     if amount_won > 0:
